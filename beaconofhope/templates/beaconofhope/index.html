@@ -1,0 +1,17 @@
+{% load static %}
+<script type="text/javascript" src="{% static '/jquery-3.4.1.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static '/style.css' %}">
+<!-- <link rel="stylesheet" type="text/css" href="{% static '/css/bootstrap.css' %}"> -->
+<!-- load jquery, our style sheet, and then bootstrap -->
+
+{% block content%}
+hi there, this is the home page/template page for all other html pages
+{% endblock %}
+
+
+<!-- all jquery code will go here -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        
+    });
+</script>
