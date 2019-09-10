@@ -2,8 +2,12 @@ from django.urls import path
 
 from . import views
 
-urlpatterns = [
+# Django convention is to have urls ending with a /
 
-    path("", views.index, name="index"),
+urlpatterns = [
+    path("index/", views.index, name="index"),
+
+    #home/login page
+    path("", views.login, name="login"),
 
 ]

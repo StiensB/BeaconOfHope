@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'beaconofhope.apps.BeaconofhopeConfig',
+    'beaconofhopeapp.apps.BeaconofhopeConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
