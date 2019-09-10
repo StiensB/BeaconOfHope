@@ -1,8 +1,15 @@
 {% extends "../beaconofhope/index.html" %}
 {% block content %}
 
-<div>
+<div style="text-align: center">
     <h1>Login</h1>
-</div>
-
-{% endblock content %}
+    <!-- eventually, we should make this a form model with how Django does things
+    but I didn't wanna do that right until we decide everything about what the admin
+    fields are supposed to be here -->
+    <form action="{% url 'index' %}">
+        Username: <input type="text"> <br>
+        Password: <input type="text"> <br>
+        <input type="submit" value="Submit"> 
+    </form> 
+    
+    </div> {% endblock content %}
