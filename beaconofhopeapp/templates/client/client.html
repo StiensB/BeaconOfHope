@@ -1,0 +1,32 @@
+{% extends "../beaconofhope/index.html" %}
+{% block content %}
+
+<div style="text-align: center">
+    <h3>Clients</h3>
+    <div style="display: inline-block">
+        {% if allClients %}
+        <table class="table-bordered table-striped">
+            <th>Edit</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Date Of Birth</th>
+            <th>Sex</th>
+            <th>Phone Number</th>
+            <th>Email Address</th>
+            {% for client in allClients %}
+            <tr>
+                <td><a class="btn" role="button" href="{% url 'editClient' client.id %}">Edit</a></td>
+                <td>{{client.firstName}}</td>
+                <td>{{client.lastName}}</td>
+                <td>{{client.dateOfBirth}}</td>
+                <td>{{client.Sex}}</td>
+                <td>{{client.phoneNumber}}</td>
+                <td>{{client.emailAddress}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock content %}

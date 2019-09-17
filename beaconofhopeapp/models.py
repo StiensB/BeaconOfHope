@@ -11,11 +11,12 @@ class CaseWorker(models.Model):
     dateCreated = models.DateTimeField(db_column='DateCreated')  # Field name made lowercase.
     createdBy = models.CharField(db_column='CreatedBy', max_length=36)  # Field name made lowercase.
     lastUpdate = models.DateTimeField(db_column='LastUpdated')  # Field name made lowercase.
-    updatedby = models.CharField(db_column='UpdatedBy', max_length=36)  # Field name made lowercase.
+    updatedBy = models.CharField(db_column='UpdatedBy', max_length=36)  # Field name made lowercase.
 
     class Meta:
         managed = False
         db_table = 'CaseWorker'
+        ordering = ["id"]
 
     def __str__(self):
         return self.firstName + " " + self.lastName
@@ -29,6 +30,7 @@ class CityLinkStatusSource(models.Model):
     class Meta:
         managed = False
         db_table = 'CityLinkStatusSource'
+        ordering = ["id"]
 
     def __str__(self):
         return self.name
@@ -62,6 +64,7 @@ class Client(models.Model):
     class Meta:
         managed = False
         db_table = 'Client'
+        ordering = ["id"]
 
     def __str__(self):
         return self.firstName + " " + self.lastName
@@ -86,6 +89,7 @@ class ClientAddress(models.Model):
     class Meta:
         managed = False
         db_table = 'ClientAddress'
+        ordering = ["id"]
 
     def __str__(self):
         return self.address1
@@ -107,6 +111,7 @@ class ClientCrime(models.Model):
         managed = False
         db_table = 'ClientCrime'
         unique_together = (('clientId', 'crimeId'),)
+        ordering = ["id"]
 
     def __str__(self):
         return self.crimeId.name
@@ -127,6 +132,7 @@ class ClientFollowUp(models.Model):
     class Meta:
         managed = False
         db_table = 'ClientFollowUp'
+        ordering = ["id"]
 
     def __str__(self):
         return self.followUp
@@ -145,6 +151,7 @@ class ClientInterest(models.Model):
         managed = False
         db_table = 'ClientInterest'
         unique_together = (('clientId', 'companyId'),)
+        ordering = ["id"]
 
     def __str__(self):
         return self.notes
@@ -165,6 +172,7 @@ class ClientInterview(models.Model):
     class Meta:
         managed = False
         db_table = 'ClientInterview'
+        ordering = ["id"]
         
     def __str__(self):
         return self.interviewerId
@@ -182,6 +190,7 @@ class ClientNote(models.Model):
     class Meta:
         managed = False
         db_table = 'ClientNote'
+        ordering = ["id"]
     
     def __str__(self):
         return self.note
@@ -203,6 +212,7 @@ class ClientPlacement(models.Model):
         managed = False
         db_table = 'ClientPlacement'
         unique_together = (('clientId', 'companyId', 'placementDate'),)
+        ordering = ["id"]
 
     def __str__(self):
         return self.clientId
@@ -222,6 +232,7 @@ class ClientSkill(models.Model):
         managed = False
         db_table = 'ClientSkill'
         unique_together = (('clientId', 'skillId'),)
+        ordering = ["id"]
 
     def __str__(self):
         return self.skillId
@@ -249,6 +260,7 @@ class ClientUpdate(models.Model):
     class Meta:
         managed = False
         db_table = 'ClientUpdate'
+        ordering = ["id"]
 
     def __str__(self):
         return self.clientId
@@ -276,6 +288,7 @@ class Company(models.Model):
     class Meta:
         managed = False
         db_table = 'Company'
+        ordering = ["id"]
 
     def __str__(self):
         return self.name
@@ -295,6 +308,7 @@ class CompanyInterest(models.Model):
         managed = False
         db_table = 'CompanyInterest'
         unique_together = (('companyId', 'clientId'),)
+        ordering = ["id"]
 
     def __str__(self):
         return self.notes
@@ -308,6 +322,7 @@ class Crime(models.Model):
     class Meta:
         managed = False
         db_table = 'Crime'
+        ordering = ["id"]
 
     def __str__(self):
         return self.name
@@ -320,6 +335,7 @@ class Interviewtype(models.Model):
     class Meta:
         managed = False
         db_table = 'InterviewType'
+        ordering = ["id"]
 
     def __str__(self):
         return self.name
@@ -344,6 +360,7 @@ class Job(models.Model):
     class Meta:
         managed = False
         db_table = 'Job'
+        ordering = ["id"]
 
     def __str__(self):
         return self.description
@@ -363,6 +380,7 @@ class JobSkill(models.Model):
         managed = False
         db_table = 'JobSkill'
         unique_together = (('jobId', 'skillId'),)
+        ordering = ["id"]
 
     def __str__(self):
         return self.skillId
@@ -383,6 +401,7 @@ class Login(models.Model):
     class Meta:
         managed = False
         db_table = 'Login'
+        ordering = ["id"]
 
     def __str__(self):
         return self.username
@@ -396,6 +415,7 @@ class Neighborhood(models.Model):
     class Meta:
         managed = False
         db_table = 'Neighborhood'
+        ordering = ["id"]
 
     def __str__(self):
         return self.name
@@ -416,6 +436,7 @@ class PlacementOption(models.Model):
         managed = False
         db_table = 'PlacementOption'
         unique_together = (('clientId', 'companyId'),)
+        ordering = ["id"]
 
 
 class ReferralSource(models.Model):
@@ -425,6 +446,7 @@ class ReferralSource(models.Model):
     class Meta:
         managed = False
         db_table = 'ReferralSource'
+        ordering = ["id"]
 
     def __str__(self):
         return self.name
@@ -438,6 +460,7 @@ class Skill(models.Model):
     class Meta:
         managed = False
         db_table = 'Skill'
+        ordering = ["id"]
 
     def __str__(self):
         return self.name
@@ -450,6 +473,7 @@ class StaffingAgency(models.Model):
     class Meta:
         managed = False
         db_table = 'StaffingAgency'
+        ordering = ["id"]
 
     def __str__(self):
         return self.name
@@ -474,6 +498,7 @@ class StatusSource(models.Model):
     class Meta:
         managed = False
         db_table = 'StatusSource'
+        ordering = ["id"]
 
     def __str__(self):
         return self.name
