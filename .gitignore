@@ -1,0 +1,6 @@
+# ignore these
+BeaconOfHope/__pycache__
+beaconofhopeapp/__pycache__
+beaconofhopeapp/migrations
+
+BeaconOfHope/settings.py
