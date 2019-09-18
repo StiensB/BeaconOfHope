@@ -6,4 +6,6 @@ from .models import Client
 class ClientForm(ModelForm):
     class Meta:
         model = Client
-        fields = ("firstName", "lastName", "dateOfBirth", "sex", "phoneNumber", "emailAddress")
+        fields = ("id", "firstName", "lastName", "dateOfBirth", "sex", "phoneNumber", "emailAddress", "lphResident",
+                  "ownsCar", "hasLicense", "rideAvailable", "statusId", "dateCreated", "createdBy",
+                  "lastUpdated", "updatedBy")

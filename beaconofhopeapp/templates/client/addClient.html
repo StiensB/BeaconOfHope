@@ -1,0 +1,16 @@
+{% extends "../beaconofhope/index.html" %}
+{% block content %}
+
+<div style="text-align: center">
+    <h3>Adding Client</h3>
+    <form style="display: inline-block" action="{% url 'addClient'  %}" method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table}}
+        </table>
+        <button type="submit">Save Client</button>
+    </form>
+</div>
+
+
+{% endblock content %}

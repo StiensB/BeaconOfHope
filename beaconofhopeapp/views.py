@@ -27,3 +27,14 @@ def saveClient(request, clientId):
     form = ClientForm(request.POST, instance=client)
     form.save()
     return redirect("/client")
+
+def addClient(request):
+    if(request.method == "POST"):
+        form = ClientForm(request.POST)
+        if(form.is_valid()):
+            form.save()
+            return redirect("/client")
+    else:
+        form = ClientForm()
+    return render(request, "client/addClient.html", {"form":form})
+

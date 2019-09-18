@@ -13,4 +13,5 @@ urlpatterns = [
     path("client/", views.client, name="client"),
     path("client/edit/<clientId>/", views.editClient, name="editClient"),
     path("client/edit/<clientId>/saveClient/", views.saveClient, name="saveClient"),
+    path("client/addClient/", views.addClient, name="addClient")
 ]
