@@ -1,0 +1,16 @@
+{% extends "../beaconofhope/index.html" %}
+{% block content %}
+
+<div style="text-align: center">
+    <h3>Editing Company</h3>
+    <form style="display: inline-block" action="{% url 'saveCompany' companyId %}" method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table}}
+        </table>
+        <button type="submit">Save Company</button>
+    </form>
+</div>
+
+
+{% endblock content %}
