@@ -16,12 +16,12 @@
             {% for client in allClients %}
             <tr>
                 <td><a class="btn" role="button" href="{% url 'editClient' client.id %}">Edit</a></td>
-                <td>{{client.firstName}}</td>
-                <td>{{client.lastName}}</td>
-                <td>{{client.dateOfBirth}}</td>
+                <td>{{client.first_name}}</td>
+                <td>{{client.last_name}}</td>
+                <td>{{client.date_of_birth}}</td>
                 <td>{{client.sex}}</td>
-                <td>{{client.phoneNumber}}</td>
-                <td>{{client.emailAddress}}</td>
+                <td>{{client.phone_number}}</td>
+                <td>{{client.email_address}}</td>
             </tr>
             {% endfor %}
         </table>

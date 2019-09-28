@@ -1,11 +1,10 @@
 from django.contrib import admin
 
-from .models import (CaseWorker, CityLinkStatusSource, Client, ClientAddress, ClientCrime, ClientFollowUp, ClientInterest,
-                    ClientInterview, ClientNote, ClientPlacement, ClientSkill,
-                    ClientUpdate, Company, CompanyInterest, Crime,
-                    Interviewtype, Job, JobSkill, Login, Neighborhood,
-                    PlacementOption, ReferralSource, Skill, StaffingAgency,
-                    StateSource, StatusSource)
+from .models import (CaseWorker, CityLinkStatusSource, Client, ClientAddress, ClientCrime, 
+                     ClientFollowUp, ClientInterest, ClientInterview, ClientNote, ClientPlacement, 
+                     ClientSkill, ClientUpdate, Company, CompanyInterest, Crime, Job,  #InterviewType, causes errors...
+                     JobSkill, Login, Neighborhood, PlacementOption, ReferralSource, Skill, 
+                     StaffingAgency, StateSource, StatusSource)
 
 # Register your models here.
 admin.site.register(CaseWorker)
@@ -23,7 +22,7 @@ admin.site.register(ClientUpdate)
 admin.site.register(Company)
 admin.site.register(CompanyInterest)
 admin.site.register(Crime)
-admin.site.register(Interviewtype)
+# admin.site.register(Interviewtype) gonna have to look into what's wrong with it
 admin.site.register(Job)
 admin.site.register(JobSkill)
 admin.site.register(Login)
