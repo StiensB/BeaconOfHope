@@ -1,9 +1,7 @@
 from django.shortcuts import redirect, render
 
-from .forms import ClientForm
-from .models import Client
-from .forms import CompanyForm
-from .models import Company
+from .models import Client, Company, Login
+from .forms import ClientForm, CompanyForm, LoginForm
 
 # Create your views here.
 
@@ -13,7 +11,8 @@ def index(request):
 
 # login/home page
 def login(request):
-    return render(request, "login/login.html")
+    form = LoginForm()
+    return render(request, "login/login.html", {"form": form})
 
 # client page
 def client(request):

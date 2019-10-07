@@ -1,17 +1,22 @@
 {% extends "../beaconofhope/index.html" %}
+{% block header %}
+<!-- have nothing here because we don't want login screen to have access to header... -->
+{% endblock header %}
 {% block content %}
 
 <div style="text-align: center">
     <h1>Login</h1>
-    <!-- eventually, we should make this a form model with how Django does things
-    but I didn't wanna do that right until we decide everything about what the admin
-    fields are supposed to be here -->
-    <form action="{% url 'index' %}">
-        Username: <input type="text"> <br>
-        Password: <input type="text"> <br>
-        <input type="submit" value="Submit"> 
-    </form> 
-    
-</div> 
+    <form style="display: inline-block" action="{% url 'index' %}" method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="Submit">
+    </form>
+
+</div>
+
+<!-- make this a real login screen, the "home screen" of sorts and make sure only the right users
+can get to each page that we care about -->
 
 {% endblock content %}
