@@ -1,0 +1,24 @@
+{% extends "../beaconofhope/index.html" %}
+{% block content %}
+
+<div style="text-align: center">
+    <h3>Companies</h3>
+    <div style="display: inline-block">
+        <table class="table-bordered table-striped">
+            <th>Name</th>
+            <th>Primary First Name</th>
+            <th>Primary Last Name</th>
+            <th>Primary Phone</th>
+            <th>Neighborhood</th>
+            <tr>
+                <td>{{companyId.name}}</td>
+                <td>{{companyId.primary_first_name}}</td>
+                <td>{{companyId.primary_last_name}}</td>
+                <td>{{companyId.primary_phone}}</td>
+                <td>{{companyId.neighborhood}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+{% endblock content %}

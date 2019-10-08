@@ -14,6 +14,7 @@
             <th>Neighborhood</th>
             {% for company in allCompanies %}
             <tr>
+                <td><a class="btn" role="button" href="{% url 'viewCompany' company.id %}">View</a></td>
                 <td><a class="btn" role="button" href="{% url 'editCompany' company.id %}">Edit</a></td>
                 <td>{{company.name}}</td>
                 <td>{{company.primary_first_name}}</td>

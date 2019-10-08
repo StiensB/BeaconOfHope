@@ -55,6 +55,11 @@ def editCompany(request, companyId):
     form = CompanyForm(instance =company)
     return render(request, "company/edit.html", { "form": form, "companyId": companyId })
 
+#view company page
+def viewCompany(request, companyId):
+    companyId = Company.objects.get(id = companyId)
+    return render(request, "company/view.html", { "companyId": companyId })
+
 # save company page
 def saveCompany(request, companyId):
     company = Company.objects.get(id = companyId)

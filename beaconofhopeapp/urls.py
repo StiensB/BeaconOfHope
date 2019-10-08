@@ -16,6 +16,7 @@ urlpatterns = [
     path("client/addClient/", views.addClient, name="addClient"),
     #company stuff
     path("company/", views.company, name="company"),
+    path("company/view/<companyId>/", views.viewCompany, name="viewCompany"),
     path("company/edit/<companyId>/", views.editCompany, name="editCompany"),
     path("company/edit/<companyId>/saveCompany/", views.saveCompany, name="saveCompany"),
     path("company/addCompany/", views.addCompany, name="addCompany")
