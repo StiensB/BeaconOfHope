@@ -2,5 +2,5 @@
 BeaconOfHope/__pycache__
 beaconofhopeapp/__pycache__
 beaconofhopeapp/migrations
-
+BeaconOfHope/_init_.py
 BeaconOfHope/settings.py
