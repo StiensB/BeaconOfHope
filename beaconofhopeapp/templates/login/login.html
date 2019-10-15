@@ -1,17 +1,13 @@
 {% extends "../beaconofhope/index.html" %}
-{% block header %}
-<!-- have nothing here because we don't want login screen to have access to header... -->
-{% endblock header %}
 {% block content %}
 
 <div style="text-align: center">
     <h1>Login</h1>
-    <form style="display: inline-block" action="{% url 'index' %}" method="POST">
-        {% csrf_token %}
-        <table>
-            {{ form.as_table }}
-        </table>
-        <input type="submit" value="Submit">
+    <FORM id="login_form" method="POST" action="{% url 'index' %}">
+      {% csrf_token %}
+      Username: <input type="text"> <br>
+      Password: <input type="text"> <br>
+      <input type="submit" value="Submit">
     </form>
 
 </div>

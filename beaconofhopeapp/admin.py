@@ -1,12 +1,13 @@
 from django.contrib import admin
 
-from .models import (CaseWorker, CityLinkStatusSource, Client, ClientAddress, ClientCrime, 
-                     ClientFollowUp, ClientInterest, ClientInterview, ClientNote, ClientPlacement, 
+from .models import (UserProfile, CaseWorker, CityLinkStatusSource, Client, ClientAddress, ClientCrime,
+                     ClientFollowUp, ClientInterest, ClientInterview, ClientNote, ClientPlacement,
                      ClientSkill, ClientUpdate, Company, CompanyInterest, Crime, Job,  #InterviewType, causes errors...
-                     JobSkill, Login, Neighborhood, PlacementOption, ReferralSource, Skill, 
+                     JobSkill, Login, Neighborhood, PlacementOption, ReferralSource, Skill,
                      StaffingAgency, StateSource, StatusSource)
 
 # Register your models here.
+admin.site.register(UserProfile)
 admin.site.register(CaseWorker)
 admin.site.register(CityLinkStatusSource)
 admin.site.register(Client)

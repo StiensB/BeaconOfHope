@@ -5,10 +5,14 @@ from . import views
 # Django convention is to have urls ending with a /
 
 urlpatterns = [
-    path("index/", views.index, name="index"),
+    path("", views.index, name="index"),
 
     #home/login page
-    path("", views.login, name="login"),
+    path("login/", views.user_login, name="login"),
+    #logout page
+    path("logout/", views.user_logout, name="logout"),
+    #register page
+    path("register/", views.register, name='register'),
     #client stuff
     path("client/", views.client, name="client"),
     path("client/edit/<clientId>/", views.editClient, name="editClient"),

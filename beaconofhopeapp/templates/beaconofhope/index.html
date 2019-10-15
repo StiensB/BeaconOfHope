@@ -4,13 +4,21 @@
 <link rel="stylesheet" type="text/css" href="{% static '/css/bootstrap.css' %}">
 <!-- load jquery, our style sheet, and then bootstrap -->
 {% block header %}
-<div style="text-align: center">
-    <a class="btn" role="button" href="{% url 'index' %}">Home</a>
-    <a class="btn" role="button" href="{% url 'client' %}">Client</a>
-    <a class="btn" role="button" href="{% url 'company' %}">Company</a>
-    <a class="btn" role="button" href="">Jobs</a>
-    <a class="btn" role="button" href="{% url 'login' %}">Login</a>
-</div>
+  {% if user.is_authenticated %}
+    Welcome {{ user.username }}  |
+    <div style="text-align: center">
+        <a class="btn" role="button" href="{% url 'index' %}">Home</a>
+        <a class="btn" role="button" href="{% url 'client' %}">Client</a>
+        <a class="btn" role="button" href="{% url 'company' %}">Company</a>
+        <a class="btn" role="button" href="">Jobs</a>
+        <a class="btn" role="button" href="{% url 'logout' %}">Logout</a>
+    </div>
+  {% else %}
+    <div style="text-align: center">
+        <a class="btn" role="button" href="{% url 'login' %}">Login</a>
+        <a class="btn" role="button" href="{% url 'register' %}">Register</a>
+    </div>
+  {% endif %}
 {% endblock header%}
 
 {% block content%}

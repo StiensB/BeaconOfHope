@@ -1,5 +1,13 @@
 from django.db import models
+from django.contrib.auth.models import Group
+from django.forms import ModelForm
 
+class UserProfile(models.Model):
+        # This field is required.
+        group = models.OneToOneField(Group, on_delete=models.CASCADE)
+
+        def __unicode__(self):
+                return self.group.name
 
 class CaseWorker(models.Model):
     id = models.IntegerField(primary_key=True)
@@ -171,7 +179,7 @@ class ClientInterview(models.Model):
         managed = False
         db_table = 'client_interview'
         ordering = ["id"]
-        
+
     def __str__(self):
         return self.id
 
@@ -189,7 +197,7 @@ class ClientNote(models.Model):
         managed = False
         db_table = 'client_note'
         ordering = ["id"]
-    
+
     def __str__(self):
         return self.note
 

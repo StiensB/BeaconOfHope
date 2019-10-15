@@ -1,7 +1,9 @@
 from django import forms
 from django.forms import ModelForm
 from django.utils.translation import gettext_lazy as _
-from .models import Client, Company, Login
+from .models import Client, Company#, Login
+from .models import UserProfile
+from django.contrib.auth.models import User
 
 class ClientForm(ModelForm):
     class Meta:
@@ -17,10 +19,12 @@ class CompanyForm(ModelForm):
                   "address2", "city", "state", "zip_code", "neighborhood", "date_created", "created_by", "last_updated",
                   "updated_by", "date_reviewed", "reviewed_by")
 
-class LoginForm(ModelForm):
-    class Meta:
-        model = Login
-        fields = ("user_name", "password")
-        widgets = {
-            "password": forms.PasswordInput(),
-        }
+class UserForm(ModelForm):
+        class Meta:
+                model = User
+                fields = ["username", "email", "password"]
+
+class UserProfileForm(ModelForm):
+        class Meta:
+                model = UserProfile
+                fields = ['group']

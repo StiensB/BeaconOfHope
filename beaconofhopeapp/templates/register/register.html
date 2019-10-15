@@ -1,0 +1,16 @@
+{% extends "../beaconofhope/index.html" %}
+{% block content %}
+<BODY>
+{% if registered %}
+        <A href="">Beacon Of Hope</A> says: thank you for registering.
+{% else %}
+        beaconofhope says: register here!
+        <FORM id="user_form" method="POST" action="{% url 'register' %}" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{ uform.as_p }}
+          {{ pform.as_p }}
+          <INPUT type="submit" name="submit" value="submit" />
+        </FORM>
+{% endif %}
+</BODY>
+{% endblock content %}
