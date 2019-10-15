@@ -1,4 +1,5 @@
 from django.shortcuts import redirect, render
+from django.db.models import Q# Complex Lookups
 
 from .models import Client, Company#, Login
 from .forms import ClientForm, CompanyForm#, LoginForm
@@ -85,6 +86,15 @@ def index(request):
 @login_required
 def client(request):
     allClients = Client.objects.all()
+    query = request.GET.get("query")
+    if query:
+        allClients = allClients.filter(
+            Q(first_name__icontains=query) | 
+            Q(last_name__icontains=query) |
+            Q(phone_number__icontains=query) |
+            Q(email_address__icontains=query)) 
+
+            
     return render(request, "client/client.html", { "allClients": allClients})
 
 # edit client page
